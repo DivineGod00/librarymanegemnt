@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+     <link th:href="@{/css/issued_style.css}" rel="stylesheet" />
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script type="text/javascript" th:src="@{/js/script.js}"></script>
+</head>
+
+<body>
+
+   <header>
+    <div class="head" style="background-color:white;">
+        <div class="container" style="background-color:white;">
+            <div class="navbar" style="background-color:white;">
+                 <div class="logo">
+                    <!-- <h2> Library Management</h2> -->
+                    <figure><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEKUlEQVR4nO2Y3W8UZRTGj8ZLAirUGy9MDB+Vioig4G4LRSpS6Gxn2/TKxH/BSy8lMUZiDNoYYmiIMTUmxluUflHa7vfOzuz2YysNrYQo8YNo6rbb7czOvPOYmd2h3WFaytBpa7JP8rvZfS6e990ze84Zoqqqqqoqu5Dt2IZ0x/tIt92F1P4XpOB5iB07aKsLiXe3Q2r/AOm2v/V0G0ykoAmT+BwT+QtI8jtpqwmjweeYFDzP0sF/rcD6WAP0qRroUzuhj/nAxFYwMQBN4OaZwHUidu75zc5NkNpeYBLfySS+oEs8TDIN0H+ugX6LKrn5LPTMMWjCOWjCWaiJZkVNnumWk817NyE4t5tJwctM4lUztNhqBmdZ48bJ5J8hgvg5IdNJmA2VPjNg2WegSUegJk5DjZ+GEmtixdipH5TwyTrvg6eDB5nIdzMxoBmhzbLI1EPP1gA3qYKJS4TRi4SJTsJ0V+V3BvrE01CTh6BE34ISPQk53KgrkeNXF0L1R9c/uMjXs1TgqpZq1Y06ZqkAmOSHPl4DTJIj01cIt74i/NJF+K3b2YNJAhvbgWLiAORwA+RQPRZDfiwO+yLysJ977OCqEGjSRC5qBk5xJSQf9LFdQJZWpRAh/PEd4d73BCW+uhdZAstshxLbj8LwMRSG3kBh6HUs3DgiFQYPdwD0xNpvGx8+qUqtnJbiUqXQLWBCC5jogz66CxgnT2HSNsjhPchfP4T89VeRHziI/MAr4/mBuvcwdOKphx6ACS2DRmDz3yJ5FlqyGVryDNSEwTvmg6fG30Yx1oRi7JSJVcdKpBFK5ATk8PESoWVlMeLD4sib5Rs+WrrlG+YtY2HwNSxUBsZ8/wHM972M+b79mOt9CXO9tcj17Bt86AG0ZHOfEfqBwPGmpdAVgRshh63QywOXQxuBh+2BD5uh8/bA/UbgOsz1GqFrMdezD7mevchd24PcT7sx++OLfWsuJfNWHAh/RBVslI8eVZrAhe8/uGVm+/2IfkwVGJ957dMELkRuhHQ7DKy5Jv4JOeK1j9xKT5fnGhMeyQvkiNc+cn0Aa0wod93Up+SI1z5yq/tdt1yL0mfkiNc+cn2AchOzekLmIjnitY/cympkVk8Y+4Ic8dpHbmU1smK58xqTpRNe+8it7J138ktyxGsfuZV9vpm6RI547SO3ss83xnzvhNc+cqulgaw0Rc5cJke89pFb2cfe213kiNc+cqulsbc0q9+5Qo547SO3ss/qv35NjnjtI7cylwtrI+qpxd1vyBGvfeRW5kZ0bWkj+r2bHPHaR26kpVqi9sVCHvHjz2+pAjn04AKy3j5N4MKPfICVVrt7xquSZWyUj9YiNkNRfYawlWHTtPKvYX/9t1WhFQ/g8Uur9YL+j6Wjr1ZKm10SeNxS2uySwHqVUlVVVVUVbbT+A+V/Rynjccc1AAAAAElFTkSuQmCC"></figure>
+                    
+                </div>
+               <nav>
+                    <ul>
+                        <h2>
+                            <li class="dropdown"><a href="#"  class="dropbtn" tabindex="1">Account</a> </li>
+                            <li class="dropdown"><a href="/library/bookview"  class="dropbtn" tabindex="2">Bookshelf</a></li>
+                            <li class="dropdown"><a href="/library/logout"  class="dropbtn" tabindex="3">Logout</a></li>
+                       </h2>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+ <div class="main-container">
+        <div class="side-panel" style=" background-color: #02091D;">
+           <div class="profile-picture" th:each="log : ${LoggedInUser}" >    
+        		 <img th:src="@{'data:image/png;base64,' + ${log.base64ImageData}}" class="rounded-circle" style = " height: 200px;
+    width: 200px;
+    object-fit: fill;
+    border-radius: 113px;
+    box-shadow: #f9f9f9 0px 0px 20px;margin-left: 20px;">
+        </div>
+            <div class="user-info" th:each="log : ${LoggedInUser}"  style = "font-family: monospace;
+    font-size: medium;">
+             
+            
+				<h2 th:text="${log.name}"></h2>
+                <p th:text="'Email: '+${log.email}"></p>
+                <p th:text="'About : '+${log.about}"></p>
+                <p th:text="'Course : '+${log.cousre}"></p>
+                <p th:text="'University/College : '+${log.university_college}"></p>
+            </div>
+        </div>
+        </div>
+<div class = "row">
+ 
+ <div class="col-md-4 mb-4">
+    <div class="card">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Book Name</th>
+                   	<th>Issue Date</th>
+                    <th>Return Date</th>
+                    <th>Action</th>
+                    
+                </tr>
+            </thead>
+            <tbody>        
+               
+                     <tr th:each="return, iterStat : ${Book}">
+            			<td th:text="${iterStat.index + 1}"></th>
+	                    <th th:text="${return.issuedBookId.bookName}"></th>
+	                    <th th:text="${return.issued_date}"></th>
+	                   	<th th:text="${return.returnDate}"></th>
+	                    
+	                     <td>
+			           			<button th:id="'returnButton' + ${return.issuedBookId.id}" class="btn btn-primary" th:onclick="'returnBook(' + ${return.issuedBookId.id} + ')'">Return</button>
+
+						 </td>
+                    </tr>
+                    
+               
+            </tbody>
+        </table>
+        
+    </div>
+</div>
+ </div>	
+</div>
+
+
+
+
+
+</main>
+ <footer>
+    <p>&copy; 2024 Library Management System</p>
+</footer>
+
+</body>
+
+</html>

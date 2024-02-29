@@ -1,0 +1,60 @@
+
+<!-- Updated HTML with icons inside input fields -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	   <link th:href="@{/css/login_style.css}" rel="stylesheet" />
+	
+	    <title>Library</title>
+
+</head>
+
+<body>
+
+<div class="main1" id = "login">
+    <form  method="post" class="registration-form" enctype="multipart/form-data" action="">
+        <div class = "img">
+        <figure>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEKUlEQVR4nO2Y3W8UZRTGj8ZLAirUGy9MDB+Vioig4G4LRSpS6Gxn2/TKxH/BSy8lMUZiDNoYYmiIMTUmxluUflHa7vfOzuz2YysNrYQo8YNo6rbb7czOvPOYmd2h3WFaytBpa7JP8rvZfS6e990ze84Zoqqqqqoqu5Dt2IZ0x/tIt92F1P4XpOB5iB07aKsLiXe3Q2r/AOm2v/V0G0ykoAmT+BwT+QtI8jtpqwmjweeYFDzP0sF/rcD6WAP0qRroUzuhj/nAxFYwMQBN4OaZwHUidu75zc5NkNpeYBLfySS+oEs8TDIN0H+ugX6LKrn5LPTMMWjCOWjCWaiJZkVNnumWk817NyE4t5tJwctM4lUztNhqBmdZ48bJ5J8hgvg5IdNJmA2VPjNg2WegSUegJk5DjZ+GEmtixdipH5TwyTrvg6eDB5nIdzMxoBmhzbLI1EPP1gA3qYKJS4TRi4SJTsJ0V+V3BvrE01CTh6BE34ISPQk53KgrkeNXF0L1R9c/uMjXs1TgqpZq1Y06ZqkAmOSHPl4DTJIj01cIt74i/NJF+K3b2YNJAhvbgWLiAORwA+RQPRZDfiwO+yLysJ977OCqEGjSRC5qBk5xJSQf9LFdQJZWpRAh/PEd4d73BCW+uhdZAstshxLbj8LwMRSG3kBh6HUs3DgiFQYPdwD0xNpvGx8+qUqtnJbiUqXQLWBCC5jogz66CxgnT2HSNsjhPchfP4T89VeRHziI/MAr4/mBuvcwdOKphx6ACS2DRmDz3yJ5FlqyGVryDNSEwTvmg6fG30Yx1oRi7JSJVcdKpBFK5ATk8PESoWVlMeLD4sib5Rs+WrrlG+YtY2HwNSxUBsZ8/wHM972M+b79mOt9CXO9tcj17Bt86AG0ZHOfEfqBwPGmpdAVgRshh63QywOXQxuBh+2BD5uh8/bA/UbgOsz1GqFrMdezD7mevchd24PcT7sx++OLfWsuJfNWHAh/RBVslI8eVZrAhe8/uGVm+/2IfkwVGJ957dMELkRuhHQ7DKy5Jv4JOeK1j9xKT5fnGhMeyQvkiNc+cn0Aa0wod93Up+SI1z5yq/tdt1yL0mfkiNc+cn2AchOzekLmIjnitY/cympkVk8Y+4Ic8dpHbmU1smK58xqTpRNe+8it7J138ktyxGsfuZV9vpm6RI547SO3ss83xnzvhNc+cqulgaw0Rc5cJke89pFb2cfe213kiNc+cqulsbc0q9+5Qo547SO3ss/qv35NjnjtI7cylwtrI+qpxd1vyBGvfeRW5kZ0bWkj+r2bHPHaR26kpVqi9sVCHvHjz2+pAjn04AKy3j5N4MKPfICVVrt7xquSZWyUj9YiNkNRfYawlWHTtPKvYX/9t1WhFQ/g8Uur9YL+j6Wjr1ZKm10SeNxS2uySwHqVUlVVVVUVbbT+A+V/Rynjccc1AAAAAElFTkSuQmCC">
+        </figure>
+        <h2 class = "img-name"> Library Management Service</h2>
+        </div>
+        <div class="login">
+        <h2 class = " signin"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD6klEQVR4nO2YT2gUVxzHJylRSqEXhXgQBOluDopQFmqUGvJ+sztvw2RmQ+NWhZQ2eurJg81BsKQWQ416sGjphgRn4p9dTIUUMVlRMWXGPxTvNaJpE0vbQ2nBxsxKY/KTNyFxHbOzMzvjzB7yhS8ZZh6bz2fem53HctxKVrIS39LY2Pg2IWQPAFwCgPuEkKcAgIvleb6Zq9Y0Nze3E0KmioGtJYSMcdUYAPjaDtwi8YAQ0gsA9Vw1hBBy0Cm8pf8RQj4KFR4APgCA2QoF2Gw8B4BEaAKEkJuVwhdJTMVisbrA4Xmef98pZGc6juohir+dE82/y4xJBy5ACPnKCfTkeRExL73S3OGkdfyZMATG7O60Fdpay0zcC0Pgcbk7Xa65lzMxGbgAABjsn7uFthYWHuSZMATQLwEAwBUBN8FsROzq2FbwawYOfrrdwFy0hQsqmIv+PpdtwFNf0Fdgvu+MYKYzUhJ2ueunuyjO5xoQs9HHgQpgLvoaIIPL7C0tUPJ6Lhq4QIspMSLOe11COCrOMXjMRpOBCSyJjLaOexbIS78EDv5SQOr3PgNSJjyBvBz3LDAiQWgCpsRo600PAj+FCm8KXBE3Yl76u4Kl8w9eld7jqiF4RW7CvPSvK/i8uIOrpuA1MYLD28vDD2/Dqrnz1mCGQ1TXIv6wBfEyQRxpWSg7ZufYtQy3tHFLD6VX8YPCLl4RsrwqjINCn7KyY3YurtKP2RguUAEHZWN5RWgHlU7wKkXbKsKj+BkazK8XTuDnMjUM7ERZcNUqQo93d3fX+g7dps/E1n95/d47+3L/D59MPCsncKBPeO4aXl2s0OsbuKzNbE3phVspvYDrD13Dml39uGH/2Vk7eK2/viScNaXGgSK0eQJPjuJqWTf6Upoxz+BZP7w4hTW7+02Jjp6eZeFnM7VIB1I+CNBfK36wpbvT9bJeuL0IXtzI0VumAOumLgXVk+34x3frzLLj2JHDtsvDGruxoCTd/47U9vOTNSnNGF8O3qxWwIbjd7F298CSSHE3f7PPPwGVnndHj1gj68bVkvBFJT/+iRt7NHz38yGs61DNsuOmgT22wOVieZjHXfGnNOMTJ/B2jQ+2+Seg0GnH8OkhfEvWjYlqEgBFeOJYQNYLca/wrIkLnf4JqPS+8+WjG9/6IZC8dMS3h5hXhHPOZ0Ar3PFDQMzf8PFbKLHTxQwU/vJDQNamMXHhM+8vMpVOuHqRpXTjmR8CrK35Me8zMEhTXJhhu0rb9a3arX16lAs7bEsMqnDMvYDQ+0a205WG7Sp5hT50cNcfhr5sSiXWF6tjGzO2t2Hf7ewNy8qOF84ldrIxdh/yApnaL540uo+FAAAAAElFTkSuQmCC"></h2>
+        <div class="form-group">
+            <i class="fas fa-user"></i>
+            <input type="text" id="username" name=rollno placeholder="Username" required>
+        </div>
+        
+        <div class="form-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+        </div>
+        
+        <div class="form-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+        </div>
+        
+        <div class="form-group">
+             <i class="fas fa-users"></i>
+		        <select class="form-control" name="id" >
+		        	<option value="" disabled selected>Select a User</option>
+		            <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
+		        </select>
+        </div>
+
+        <button type="submit" class="btn">Register</button>
+       <!--  <p class="confirmation-message">Registration successful! 🎉</p> -->
+        </div>
+    </form>
+</div>
+
+
+</body>
+</html>

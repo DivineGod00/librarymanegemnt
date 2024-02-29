@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&family=Trirong:wght@300&display=swap');
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+   font-family: "Poppins", sans-serif;
+     margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    
+    
+}
+
+button {
+    background-color: #28a745; /* Bootstrap success button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the header is on top of other elements */
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.head {
+    padding: 12px 0; 
+    }
+     .header .row{
+    margin-top: 70px;
+}
+.navbar{
+    display: flex;
+   
+    align-items: center;
+
+
+}
+nav{
+    flex: 1;
+    text-align: right;
+      
+}
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+
+}
+nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+a{
+    text-decoration: none;
+    color:slategray;
+    font-size: 20px;
+    font: weight 500px;
+   font-family: "Poppins", sans-serif;
+}
+
+
+
+main {
+   display: flex;
+  justify-content: space-between;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.side-panel {
+    width: 270px; /* Set a fixed width */
+    height: 100vh; /* Set fixed height to 100% of viewport height */
+    overflow-y: auto; /* Add scroll if content exceeds the height */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    background-color: #02091D;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    padding-left: 10px;
+    padding-top: 80px;
+    left: 0px;
+    top: 58px;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    left: 270px;
+    position: absolute;
+    top:150px;
+    
+}
+
+/* Individual Product Card */
+.col-md-4 {
+    margin: 15px; /* Adjust the margin as needed */
+}
+
+.card {
+    border: 1px solid #ddf;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+     box-shadow: rgba(0, 0, 0, 0.6) 0px 3px 10px;
+     max-width: 300px;
+    min-width: 300px;
+
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100px;
+    height: 175px;
+    border-bottom: 1px solid #ddd;
+}
+
+.card-body {
+    padding: 15px;
+    max-width: 300px;
+    min-width: 300px;
+    
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #555;
+}
+.logo {
+    margin-left: 20px;
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+			    align-items: center;
+			    gap: 20px;
+			    justify-content: center;
+}
+.search-bar{
+    
+    display: flex;
+    flex-wrap: wrap;
+    left: 290px;
+    position: absolute;
+    top: 90px;
+    width:70%;
+    
+}
+.searchForm{
+	display:contents;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    flex-grow: 1;
+    border: 3px solid #ddd;
+    border-radius: 11px;
+}
+
+.search-bar button {
+   padding: 11px;
+    background-color: #007bff;
+    color: #fff;
+    border: groove;
+    border-radius: 18px;
+    cursor: pointer;
+    margin-left: 31px;
+   font-family: "Poppins", sans-serif;
+
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+}
+ 
+ .dropdown {
+    position: relative;
+    
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: white;
+    color: slategray;
+    padding: 14px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+   
+    background-color: #f9f9f9;
+    width: 200px; /* Set the width as per your preference */
+    box-sizing: border-box; /* Include padding in the height calculation */
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 3px 10px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+}
+
+.dropdown-content a:hover {
+    background-color: slategray;
+    color: black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #007bff;
+    color:black;
+}
+
+
+.profile-picture img {
+   height: 200px;
+    width: 200px;
+    object-fit: fill;
+    border-radius: 113px;
+    box-shadow: #f9f9f9 0px 0px 20px;
+    margin-left: 20px;
+}
+
+ 
+
+
+
+.issued {
+     background-color: #dee2e6;
+     color: #fff;
+     border: none;
+     padding: 4px 20px;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 14px;
+     cursor: not-allowed;
+     border-radius: 4px;
+     transition: background-color 0.3s ease-in-out;
+ }
+ .searchedBook{
+ 	/* display: flex;
+    flex-wrap: wrap;
+    left: 270px;
+    position: absolute;
+    top: 150px; */
+    
+    position: absolute;
+    top: 130px;
+    left: 284px;
+ 
+ }
+ 
+
+.returned {
+    background-color: #dee2e6;
+    color: #fff;
+    border: none;
+    padding: 4px 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: not-allowed;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+        }
+.btn-primary:hover {
+    background-color: #0056b3;
+} 
+ 
+footer{
+	
+	 color: black;
+	 position: fixed;
+     bottom: 0;
+     width: 100%;
+     text-align: center;
+     padding: 0px;
+	 background: radial-gradient(white,rgb(255 255 255));
+     box-shadow: rgba(0, 0, 0, 0.6) 0px 3px 30px;
+}

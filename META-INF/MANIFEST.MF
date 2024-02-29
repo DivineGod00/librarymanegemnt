@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: LibraryManagement
+Bundle-SymbolicName: LibraryManagement
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Automatic-Module-Name: LibraryManagement
+Export-Package: com.library.management,
+ com.library.management.Utilities,
+ com.library.management.controller,
+ com.library.management.dao,
+ com.library.management.dto,
+ com.library.management.service,
+ com.library.management.sql.model,
+ com.library.management.wrapper

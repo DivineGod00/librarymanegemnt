@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link th:href="@{/css/admin_style.css}" rel="stylesheet" />
+    <title>Library Admin</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+           
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABfUlEQVR4nO2ZP0rEQBTGf4oIYiFY+QesbCzEysZSvIKwBxCPYDyCB9jGK3gFGzEuVnbiAbaxEWWRLQR1ZMIrliHZTJLZzUTeD74mmcy8b+Z9KRJQSlkEesCLqCfXOsUJ8AQYR8/AKbBA5BwBdzkGXD0Cx0TIPnDjYcDVLXBIBOyJgd8aJlxDB20Y2AGuge+GBib1I5uyOw8Dm0Af+PIozI65ALZESYXn+rJWcNaBK2BcYYdt4S5JhefHsqZduzGrsvhHjVbJ29GNGvN8iqG1OgaWgXPgtUHP23Zy2W4w35ts6oqPgSXgDBgGCG9ea10GmHcoNdpaC3kIsNBkaJMaYTeeSqcZMR1TIf/GSBpBccZT99OMKDHzDoxyjnQk99oe503q2Z9tjauE79uirXHeqBH0RDK0tYrQjKAZydCMFKEZQTOSoRkpQjOCZmQ2GVFiYBDBpx5TIvtFtBTTEZXSeSODCIozIVqs7aKCnUzbBamRWf7kmZfS8neXoiiWP0S1m1FhfP/pAAAAAElFTkSuQmCC">
+               <h2>Library Management</h2>      
+        </div>
+        <nav>
+           <!--  <a href="AdminHome">Home</a> -->
+            <a href="book">Books</a>
+            <a href="Member">Members</a>
+            
+            <a href="#profile">Profile</a>
+            <a href="logout">Logout</a>
+        </nav>
+    </header>
+
+    <div class="container">
+       <form method="post">
+              <div class="side-panel" style=" background-color: #02091D;">
+           <div class="profile-picture" th:each="log : ${LoggedInUser}" >    
+        		<img th:src="@{'data:image/png;base64,' + ${log.base64ImageData}}"
+     class="rounded-circle" >
+        </div>
+            <div class="user-info" th:each="log : ${LoggedInUser}" style = "font-family: monospace;
+    font-size: medium;">
+				<h2 th:text="${log.name}"></h2>
+                <p th:text="'Email: '+${log.email}"></p>
+                <p th:text="'About : '+${log.about}"></p>
+                <p th:text="'Course : '+${log.cousre}"></p>
+                <p th:text="'University/College : '+${log.university_college}"></p>
+            </div>
+        </div>
+        </form>
+        <div class="addBook_btn">
+            <a href="/submit" class="addMember">Click here to add new member.</a>
+        <div class="col-md-4 mb-4">
+	   		<div class="card">
+	         <table class="table">
+	            <thead>
+	                <tr>
+	                    <th>Member id</th>
+	                    <th>Name</th>
+	                   	<th>Course</th>
+	                    <th>College/University</th>
+	                    <th>Action</th>
+	                    
+	                </tr>
+	            </thead>
+	            <tbody>        
+	               
+	                     <tr th:each="return, iterStat : ${user}">
+	            			<td th:text="${iterStat.index + 1}"></th>
+		                    <th th:text="${return.name}"></th>
+		                    <th th:text="${return.cousre}"></th>
+		                   	<th th:text="${return.university_college}"></th>
+		                    
+		                     <td>
+				           			<!-- <button th:id="'returnButton' + ${return.issuedBookId.id}" class="btn btn-primary" th:onclick="'returnBook(' + ${return.issuedBookId.id} + ')'">Return</button>
+	 -->
+	 <button class="btn btn-primary">Return</button>
+							 </td>
+	                    </tr>
+	                    
+	               
+            </tbody>
+        </table>
+        
+    </div>
+</div>
+</div>
+
+        <section class="member" id="bookPopup" style="display: none;">
+            <div class="book-popup-content">
+                <div class="header">
+                    <h2>Add Member</h2>
+                    <div class="close-btn">&times;</div>
+                </div>
+                <div style="display: flex;
+    margin-top: 26px;">
+
+                    <form method="post" enctype="multipart/form-data" action="/library/admin/Member">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name"  required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="about" class="form-label">About</label>
+                            <input type="text" class="form-control" id="about" name="about" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="course" class="form-label">Course</label>
+                            <input type="text" class="form-control" id="course" name="course" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="university_college" class="form-label">University/College</label>
+                            <input type="text" class="form-control" id="university_college" name="university_college" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="mail" class="form-label">Email</label>
+                            <input type="text" class="form-control" id="mail" name="mail" required>
+                        </div>
+                        <div class="mb-3">
+
+                            <label for="role" class="form-label">Role</label>
+                            <select class="form-control" id="role" name="role" required >
+
+                <option value="" disabled selected>Select a role</option>
+                <option value="STUDENT"></option>
+                <option value="ADMIN"></option>
+                <!-- Add more roles if needed -->
+            </select>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="imageData" class="form-label">User Image</label>
+                            <input type="file" class="form-control" id="imageData" name="imageData" accept="image/*"  required="required">
+                        </div>
+
+
+                        <button type="submit">Add User</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Library Admin Page</p>
+    </footer>
+    <script>
+        var addBookLink = document.querySelector('.addMember');
+			  var bookPopup = document.getElementById('bookPopup');
+			  var closeBtn = document.querySelector('.close-btn');
+			
+			  // Add click event listener to the link
+			  addBookLink.addEventListener('click', function(event) {
+			      event.preventDefault(); // Prevent the default link behavior
+			      bookPopup.style.display = 'block'
+			 // Show the popup
+			  });
+			
+			  // Add click event listener to the close button
+			  closeBtn.addEventListener('click', function() {
+			      bookPopup.style.display = 'none'; // Hide the popup
+			  });
+    </script>
+</body>
+
+</html>

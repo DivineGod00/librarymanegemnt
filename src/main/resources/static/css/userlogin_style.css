@@ -1,0 +1,81 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-container img {
+    max-width: 150px;
+    height: auto;
+}
+
+.login form {
+    text-align: center;
+}
+
+.login form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.login form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-image: url('path/to/logo.png'); /* Replace with the path to your logo image */
+    background-size: 20px; /* Adjust the size of the logo */
+    background-position: 10px 50%; /* Adjust the position of the logo */
+    background-repeat: no-repeat;
+    padding-left: 40px; /* Adjust based on the logo width and position */
+}
+
+.login form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.login form button:hover {
+    background-color: #0056b3;
+}
+
+.login a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.login-icons {
+    margin-top: 10px;
+}
+
+.login-icons i {
+    margin-right: 5px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}

@@ -1,0 +1,285 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Bootstrap light background color */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position:fixed;
+    width:100%;
+    top:0;
+}
+
+.logo {
+   			display: flex;
+		    align-items: center;
+		    gap: 2px;
+		    justify-content: center;
+}
+nav{
+	 padding: 2px 72px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffd700; /* change color on hover */
+}
+
+footer {
+    position: fixed; /* Fixed position so it stays at the bottom */
+    left: 0; /* Align to the left */
+    bottom: 0; /* Stick to the bottom */
+    width: 100%; /* Take up the full width */
+    background-color: #343a40; /* Bootstrap dark background color */
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-weight: bold;
+    min-width: 131px;
+}
+
+.form-control {
+    margin-bottom: 15px;
+    border: 1px solid #ced4da; /* Bootstrap input border color */
+    border-radius: 5px;
+    padding: 8px;
+    width: 50%;
+}
+
+.input-group input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+/* Optional: Add a margin to the selected file name for spacing */
+.selected-file {
+    margin-top: 10px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center; /* Horizontally center content */
+    align-items: center; /* Vertically center content */
+    height: 100vh;
+    background-color: #02091D;
+    color: #fff;
+    width: 100px;
+}
+
+.custom-file-upload {
+    background-color: #007bff; /* Bootstrap primary button color */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.side-panel {
+   width: 270px;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #02091D;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    padding-left: 10px;
+    padding-top: 80px;
+    left: 0px;
+    top: 44px;
+}
+.addBook_btn{
+	margin-left: 317px;
+    margin-top: 55px;
+    flex: 1;
+}
+.book {
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     margin: auto 481px;
+    flex: 1; /* Equal flex distribution */
+    overflow-y: auto; /* Center the section and add margin for spacing */
+    position: fixed;
+	top: 123px;
+	display:none;
+}
+
+.member {
+    max-width: 600px;
+    background-color: #fff;
+    padding: 19px;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    margin: auto 481px;
+    flex: 1;
+    overflow-y: auto;
+    position: fixed;
+    top: 120px;
+    display:none;
+}
+
+.book-popup-content .header {
+    display: flex;
+    justify-content: space-between; /* Align items at start and end */
+    align-items: center; /* Center vertically */
+    padding: 0px;
+}
+
+/* Style the close button */
+.book-popup-content .close-btn {
+    cursor: pointer;
+    font-size: 24px;
+    font-size:x-large;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+   /*  position: fixed; */
+}
+
+button {
+    background-color: #28a745; /* Bootstrap success button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+.col-md-4 {
+    margin-top: 8px; /* Adjust the margin as needed */
+    padding-bottom: 35px;
+}
+
+.mb-3{
+	display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.card {
+    /* border: 1px solid #ddf;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out; */
+   /*   box-shadow: rgba(0, 0, 0, 0.6) 2px 20px 10px; */
+}
+/* Style for the table */
+.table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f2f2f2;
+}
+.addBook {
+          text-decoration: none;
+         color:black;
+      }
+
+.addBook:hover {
+         text-decoration: blink; 
+         color:blue;/* Remove underline on hover */
+}
+
+.row{
+	display: flex;
+    flex-direction: column;
+    height: 100vh;
+	
+	
+}
+.addMember {
+    text-decoration: none;
+   color:black;
+}
+
+.addMember:hover {
+    text-decoration: blink; 
+    color:blue;/* Remove underline on hover */
+}
+
+button:hover {
+    background-color: #218838; /* Bootstrap success button hover color */
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+    .logo h2 {
+        font-size: 20px; /* Decrease font size for smaller screens */
+    }
+    
+    nav a {
+        font-size: 16px; /* Decrease font size for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .main-container {
+        width: 100%; /* Adjust width for smaller screens */
+    }
+    
+    .book,
+    .member {
+        left: 0; /* Center elements on smaller screens */
+        width: 100%; /* Adjust width for smaller screens */
+        margin-left: 0; /* Remove left margin */
+        margin-right: 0; /* Remove right margin */
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .logo h2 {
+        font-size: 18px; /* Further decrease font size for very small screens */
+    }
+    
+    nav a {
+        font-size: 14px; /* Further decrease font size for very small screens */
+    }
+}

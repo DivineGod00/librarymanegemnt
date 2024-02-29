@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details - Library Management System</title>
+    <link th:href="@{/css/book_style.css}" rel="stylesheet" />
+    <!-- <script type="text/javascript" th:src="@{/js/script.js}"></script> -->
+    <!-- Example CDN link for jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script type="text/javascript" th:src="@{/js/script.js}"></script>
+</head>
+<body>
+
+<header>
+    <div class="head" style="background-color:white;">
+        <div class="container" style="background-color:white;">
+            <div class="navbar" style="background-color:white;">
+                <div class="logo">
+                    <h2> Library Management</h2>
+                </div>
+                <nav>
+                    <ul>
+                        <h2>
+                            <li class="dropdown"><a href="#"  class="dropbtn" tabindex="1">Account</a>
+                            <div class="dropdown-content">
+							        <a href="">Profile</a>
+							        <a href="#">Settings</a>
+							        <a href="#">Logout</a>
+							    </div>
+                            
+                            </li>
+                        </ul>
+                    </h2>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="col-lg-9">
+        <h2>Book Bank</h2>
+
+        <!-- Search Bar -->
+        <div class="search-bar" >
+            <form  method="get">
+                <input type="text" name="search" placeholder="Search by title, author, category..." >
+                <button type="submit" class="btn btn-secondary">Search</button>
+            </form>
+        </div>
+
+        <div class="row">
+            <!-- Product Cards -->
+            <div class="col-md-4 mb-4"  th:each="book : ${Book}">
+                <div class="card">
+                 <img th:src="@{'data:image/png;base64,' + ${book.base64ImageData}}" 
+     class="card-img-top" 
+     th:alt="${book.book_name}" 
+     style="height: 200px; width: 100%;">
+                    <div class="card-body">
+                        <a href="#"><h5 class="card-title" th:text="${book.book_name}"></h5></a>
+                        <p class="card-text" th:text="${book.book_category_id.name}"></p>
+                        <h5>Author</h5>
+                        <p class="card-text" th:text="${book.book_author}"></p>
+                        <p class="card-text" th:text="${#strings.length(book.book_description) > 10 ? #strings.substring(book.book_description, 0, 10) + '...' : book.book_description}">
+                          <span th:if="${#strings.length(book.book_description) > 10}">
+					        <a href="#" data-toggle="collapse" th:data-target="'#collapseDescription' + ${book.id}">Read More</a>
+					    </span>
+                        </p>
+                       
+
+                        <button th:action="@{'/issue/' + ${book.id}}" th:id="'issueButton' + ${book.id}" class="btn btn-primary" th:onclick="'toggleState(' + ${book.id} + ')'">Issue</button>
+                         
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 Library Management System</p>
+</footer>
+
+</body>
+</html>

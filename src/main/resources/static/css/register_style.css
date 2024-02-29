@@ -1,0 +1,82 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css');
+
+/* Your existing CSS styles... */
+/* Your existing CSS styles... */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.registration-form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 100px 0 100px rgba(0, 0, 0, 200);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    position: relative;
+}
+
+i {
+    position: absolute;
+    left: 10px;
+    top: 38%;
+    transform: translateY(-50%);
+    color: #777;
+}
+
+input {
+    width: calc(100% - 10px); /* Adjusted width to account for icon and padding */
+    padding: 8px 80px; /* Adjust padding to accommodate the icon */
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding-left: 30px; /* Adjust padding to accommodate the icon */
+}
+
+button {
+    background-color: rgb(55, 23, 80);
+    color: #fff;
+    padding: 10px 104px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    
+    
+}
+select {
+	width: calc(100% - 0px);
+   	margin-bottom: 14px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 8px;
+    padding-left:35px;
+    
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.confirmation-message {
+    text-align: center;
+    color: #28a745;  
+}
