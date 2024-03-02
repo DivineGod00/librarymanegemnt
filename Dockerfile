@@ -1,5 +1,5 @@
-FROM openjdk:19
+FROM openjdk:17
 EXPOSE 2207
 
-ADD /target/library-management.jar library-management.jar 
+ADD target/library-management.jar . 
 ENTRYPOINT [ "java","-jar","/library-management.jar" ]
