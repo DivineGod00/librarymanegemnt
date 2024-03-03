@@ -42,14 +42,12 @@ public class UserController {
 
 	@GetMapping("/logout")
 	public String logOut(HttpServletRequest request, HttpServletResponse response, SessionStatus status) throws Exception{
-
 		return applicationProcess.logOut(request, response, status);
 	}
 
 	@PostMapping(value = "/userLogIn")
 	public String verifyLogin(@RequestParam String name, @RequestParam String password, ModelMap model,
 			MultipartFile file, HttpServletRequest httpServletRequest) throws Exception {
-
 		return applicationProcess.afterLogin(name, password, model, file, httpServletRequest);
 	}
 
@@ -67,23 +65,13 @@ public class UserController {
 
 	@PostMapping("/bookview/return/{bookId}")
 	public String returnBook(@PathVariable Long bookId, ModelMap model, HttpServletRequest httpServletRequest)throws Exception {
-
 		return applicationProcess.returnBook(bookId, model, httpServletRequest);
 	}
 	
 	@GetMapping("/search")
 	public String search(@RequestParam(name = "search", required=false) String searchQuery, ModelMap model, HttpServletRequest httpServletRequest) throws Exception
 	{
-		
 		return applicationProcess.searchBook(searchQuery, model, httpServletRequest);
-		
-//		logger.info("-------------Seraching Book-------------");
-//		logger.info("Seraching Book :::-> "+searchQuery);
-//	        
-//		
-//	     
-//	        model.addAttribute("searchQuery", searchQuery);
-//	        return "User";
 	}
 
 	@GetMapping("/register")

@@ -29,11 +29,11 @@ public class CommonMethods {
 		LoginMaster credentials = loginRepo.findByUsernameAndPassword(name, password);
 		if (credentials != null && name.equals(credentials.getUsername())
 				&& password.equals(credentials.getPassword())) {
-			logger.info("Matched Credentials...");
+			logger.info("--------- Matched Credentials --------");
 			return true;
 		}
 
-		logger.info("Not Matched Credentials...");
+		logger.info("---------- Not Matched Credentials ---------");
 		return false;
 	}
 	

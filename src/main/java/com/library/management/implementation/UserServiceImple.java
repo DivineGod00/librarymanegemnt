@@ -53,6 +53,7 @@ public class UserServiceImple implements ApplicationProcess{
 	@Override
 	public String loginProcess(HttpServletRequest httpServletRequest)throws Exception
 	{
+		logger.info("-------- Log In ------");
 		String page = userService.loginPage();
 		return page;
 	}
@@ -80,12 +81,14 @@ public class UserServiceImple implements ApplicationProcess{
 
 		httpServletRequest.getSession().setAttribute("LoggedInUser", user);
 		model.addAttribute("Book", dm);
+		logger.info("-------- Successfully Log In ---------");
 		return page;
 	}
 	
 	@Override
 	public String issueBook( Long bookId, ModelMap model, HttpServletRequest httpServletRequest)throws Exception
 	{
+		logger.info("------- Book Issue ------");
 		String page = userService.issueBook(bookId, model, httpServletRequest);
 		return page;
 	}
@@ -93,7 +96,7 @@ public class UserServiceImple implements ApplicationProcess{
 	@Override
 	public String logOut(HttpServletRequest request, HttpServletResponse response, SessionStatus status)throws Exception
 	{
-
+		logger.info("-------- Log Out -------");
 		String page = userService.logOut(request, response, status);
 		return page;
 		
@@ -101,6 +104,7 @@ public class UserServiceImple implements ApplicationProcess{
 	@Override
 	public String bookView(ModelMap model, HttpServletRequest httpServletRequest)throws Exception
 	{
+		logger.info("-------- Book View ---------");
 		String page = userService.bookView(model, httpServletRequest);
 		return page;
 	}
@@ -108,6 +112,7 @@ public class UserServiceImple implements ApplicationProcess{
 	@Override
 	public String returnBook(Long bookId, ModelMap model, HttpServletRequest httpServletRequest)throws Exception 
 	{
+		logger.info("------- Book Return --------");
 		String page = userService.returnBook(bookId, model, httpServletRequest);
 		return page;
 	}
@@ -115,11 +120,12 @@ public class UserServiceImple implements ApplicationProcess{
 	@Override
 	public String searchBook(String searchQuery, ModelMap model, HttpServletRequest httpServletRequest) throws Exception
 	{
-	
+		
+		logger.info("------ Search Book --------");
 		String page = userService.searchBook(searchQuery, model, httpServletRequest);
 		return page;
 	}
-//	
+
 	@Override
 	public String register(ModelMap model, HttpServletRequest httpServletRequest)throws Exception
 	{
@@ -127,12 +133,12 @@ public class UserServiceImple implements ApplicationProcess{
 		String page = userService.register(model, httpServletRequest);
 		return page;
 	}
-//	
+
 	@Override
 	public String registerUser(UserRegisterDto bd,
 			ModelMap model,HttpServletRequest httpServletRequest)throws IOException,Exception
 	{
-		
+		logger.info("------- Register User ------");
 		String page = userService.registerUser(bd, model, httpServletRequest);
 		return page;
 	}

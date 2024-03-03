@@ -12,11 +12,13 @@
 <body>
 
     <header>
-        <div class="logo">
-           
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABfUlEQVR4nO2ZP0rEQBTGf4oIYiFY+QesbCzEysZSvIKwBxCPYDyCB9jGK3gFGzEuVnbiAbaxEWWRLQR1ZMIrliHZTJLZzUTeD74mmcy8b+Z9KRJQSlkEesCLqCfXOsUJ8AQYR8/AKbBA5BwBdzkGXD0Cx0TIPnDjYcDVLXBIBOyJgd8aJlxDB20Y2AGuge+GBib1I5uyOw8Dm0Af+PIozI65ALZESYXn+rJWcNaBK2BcYYdt4S5JhefHsqZduzGrsvhHjVbJ29GNGvN8iqG1OgaWgXPgtUHP23Zy2W4w35ts6oqPgSXgDBgGCG9ea10GmHcoNdpaC3kIsNBkaJMaYTeeSqcZMR1TIf/GSBpBccZT99OMKDHzDoxyjnQk99oe503q2Z9tjauE79uirXHeqBH0RDK0tYrQjKAZydCMFKEZQTOSoRkpQjOCZmQ2GVFiYBDBpx5TIvtFtBTTEZXSeSODCIozIVqs7aKCnUzbBamRWf7kmZfS8neXoiiWP0S1m1FhfP/pAAAAAElFTkSuQmCC">
-               <h2>Library Management</h2>      
-        </div>
+       <div class="logo">
+                    <!-- <h2> Library Management</h2> -->
+                    <figure>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEKUlEQVR4nO2Y3W8UZRTGj8ZLAirUGy9MDB+Vioig4G4LRSpS6Gxn2/TKxH/BSy8lMUZiDNoYYmiIMTUmxluUflHa7vfOzuz2YysNrYQo8YNo6rbb7czOvPOYmd2h3WFaytBpa7JP8rvZfS6e990ze84Zoqqqqqoqu5Dt2IZ0x/tIt92F1P4XpOB5iB07aKsLiXe3Q2r/AOm2v/V0G0ykoAmT+BwT+QtI8jtpqwmjweeYFDzP0sF/rcD6WAP0qRroUzuhj/nAxFYwMQBN4OaZwHUidu75zc5NkNpeYBLfySS+oEs8TDIN0H+ugX6LKrn5LPTMMWjCOWjCWaiJZkVNnumWk817NyE4t5tJwctM4lUztNhqBmdZ48bJ5J8hgvg5IdNJmA2VPjNg2WegSUegJk5DjZ+GEmtixdipH5TwyTrvg6eDB5nIdzMxoBmhzbLI1EPP1gA3qYKJS4TRi4SJTsJ0V+V3BvrE01CTh6BE34ISPQk53KgrkeNXF0L1R9c/uMjXs1TgqpZq1Y06ZqkAmOSHPl4DTJIj01cIt74i/NJF+K3b2YNJAhvbgWLiAORwA+RQPRZDfiwO+yLysJ977OCqEGjSRC5qBk5xJSQf9LFdQJZWpRAh/PEd4d73BCW+uhdZAstshxLbj8LwMRSG3kBh6HUs3DgiFQYPdwD0xNpvGx8+qUqtnJbiUqXQLWBCC5jogz66CxgnT2HSNsjhPchfP4T89VeRHziI/MAr4/mBuvcwdOKphx6ACS2DRmDz3yJ5FlqyGVryDNSEwTvmg6fG30Yx1oRi7JSJVcdKpBFK5ATk8PESoWVlMeLD4sib5Rs+WrrlG+YtY2HwNSxUBsZ8/wHM972M+b79mOt9CXO9tcj17Bt86AG0ZHOfEfqBwPGmpdAVgRshh63QywOXQxuBh+2BD5uh8/bA/UbgOsz1GqFrMdezD7mevchd24PcT7sx++OLfWsuJfNWHAh/RBVslI8eVZrAhe8/uGVm+/2IfkwVGJ957dMELkRuhHQ7DKy5Jv4JOeK1j9xKT5fnGhMeyQvkiNc+cn0Aa0wod93Up+SI1z5yq/tdt1yL0mfkiNc+cn2AchOzekLmIjnitY/cympkVk8Y+4Ic8dpHbmU1smK58xqTpRNe+8it7J138ktyxGsfuZV9vpm6RI547SO3ss83xnzvhNc+cqulgaw0Rc5cJke89pFb2cfe213kiNc+cqulsbc0q9+5Qo547SO3ss/qv35NjnjtI7cylwtrI+qpxd1vyBGvfeRW5kZ0bWkj+r2bHPHaR26kpVqi9sVCHvHjz2+pAjn04AKy3j5N4MKPfICVVrt7xquSZWyUj9YiNkNRfYawlWHTtPKvYX/9t1WhFQ/g8Uur9YL+j6Wjr1ZKm10SeNxS2uySwHqVUlVVVVUVbbT+A+V/Rynjccc1AAAAAElFTkSuQmCC">
+        			</figure>
+                    <h2> Library Management</h2>
+                </div>
         <nav>
            <!--  <a href="AdminHome">Home</a> -->
             <a href="book">Books</a>
@@ -70,8 +72,8 @@
 		                     <td>
 				           			<!-- <button th:id="'returnButton' + ${return.issuedBookId.id}" class="btn btn-primary" th:onclick="'returnBook(' + ${return.issuedBookId.id} + ')'">Return</button>
 	 -->
-	 <button class="btn btn-primary">Return</button>
-							 </td>
+	<img class="update" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACLUlEQVR4nO2XTWsUQRCGHzU5SFZBQfDgTTCg+xe8+YmgF3+BeJR8efcYbyL+AkHvwR/gVTR4MWgSAh5ijp40BtFDKhS8A0OTuLObdNeszAvFMrNdNf1MVXX3QKfxkmW0VeD8/wBiJWEso33S7wpwbpxBzgAfS2XGMholYSwzSDEYKwBSBMYKgWSHsYIgWWFKg2SDiQDJAhMFcuQwkSBox1/ReP9tJUgu+H0VPXHrQBJFZ8C6jCSKzoB1GUkUnQHrMpIoOgPWZSRRdAasy0ii0m98E3gB3ASmgSngJHABuMMhVApgC3gAnBhyfsvA+7aALAE9PW8SuA+8BtaAX8Bv4CvwErh6wPzCQZ4Dx/Wse8BGA593KrvWgCwJwu1p7f5nYA64UuuRPvAE+K4xO+qZcJCtWjlVEH+ARwP6ZEpl5+P/tgHEG7sqp11BXKO5niXxQkA29dYnaz3hmfiXlgfEDAHxfQKtTlVPDFp2P7QR5JZiV7XujZ1dlsEuKfa6ri+PK8gpxf6ZXI+qt0129xwgvSMEOa0YPyJALial5RvfqOorxnoEyO2k2ecPAfJYMV61Yfn9MsKp1zWhg6UpVnGQb9oM6xviDMNrXr4bilUcxO1hckTxc9P1ISBuyMd97zZxsIxZOatnLOqeT2xWJXOQJpSJ6sDovkSCuL0BjukYv6i3a+qZBa1IPVlfjb2qMbvyqb5lWiUvkSYfVj6mUTlFKv3U3ZZ5JnyJ9f/2bew9H2dn9WgEzJ0AAAAASUVORK5CYII=">
+														 </td>
 	                    </tr>
 	                    
 	               

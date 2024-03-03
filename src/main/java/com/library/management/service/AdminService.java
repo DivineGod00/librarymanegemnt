@@ -68,7 +68,7 @@ public class AdminService {
 			session.invalidate();
 		}
 		status.setComplete();
-		logger.info("User Log Out ");
+		logger.info("------- Successfully Logout--------");
 		return loginPage();
 	}
 	
@@ -183,11 +183,9 @@ public class AdminService {
 	
 	public boolean checkingCredentials(String name, String password) throws Exception {
 		if ((methods.isEmptyOrNull(name) && methods.isEmptyOrNull(password)) || methods.isEmptyOrNull(name) || methods.isEmptyOrNull(password)) {
-			logger.info("Null is name : " + name + " & Password : " + password);
 			return false;
 		}
 		boolean isValidNamePassword = methods.isEqualsOrNot(name, password);
-		logger.info("Is Valid User :: " + isValidNamePassword);
 		return isValidNamePassword;
 	}
 

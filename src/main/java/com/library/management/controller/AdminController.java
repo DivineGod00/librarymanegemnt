@@ -102,28 +102,5 @@ public class AdminController {
 		return adminProcess.addUser(bd, file, httpServletRequest);
 	}
 	
-	
-//	@PostMapping("/register")
-//	public String addBook(@ModelAttribute UserRegisterDto bd, @RequestParam("imageData") MultipartFile file,
-//			ModelMap model,HttpServletRequest httpServletRequest)throws IOException,Exception {
-//
-//		LoginMaster addUser = new LoginMaster();
-//		addUser.setUsername(bd.getRollno());
-//		addUser.setPassword(bd.getPassword());
-//		UserMaster bc = userRepo.findById(bd.getId()).orElse(null);
-//		if (bc != null) {
-//
-//			addUser.setUserId(bc);
-//			logger.info("UserMaster: " + addUser);
-//			logger.info("UserMaster: " + addUser);
-//			loginRepo.save(addUser);
-//
-//			return "redirect:Register";
-//		} else {
-//			return "redirect:Register";
-//		}
-//
-//	}
-	
 
 }
