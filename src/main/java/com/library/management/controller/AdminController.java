@@ -1,19 +1,18 @@
 package com.library.management.controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.util.Base64Utils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -25,17 +24,13 @@ import com.library.management.dao.UserRepo;
 import com.library.management.dto.BookDto;
 import com.library.management.dto.UserRegisterDto;
 import com.library.management.interfaces.AdminProcess;
-import com.library.management.sql.model.BookCategory;
-import com.library.management.sql.model.BooksMaster;
-import com.library.management.sql.model.LoginMaster;
-import com.library.management.sql.model.UserMaster;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/library/admin")
+@SessionAttributes("name")
 public class AdminController {
 
 	private final Logger logger = LoggerFactory.getLogger(AdminController.class);

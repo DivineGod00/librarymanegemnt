@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,7 +25,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
 @RequestMapping(value = "/library")
-
+@SessionAttributes("name")
 public class UserController {
 
 	private final Logger logger = LoggerFactory.getLogger(UserController.class);
@@ -35,7 +36,7 @@ public class UserController {
 	private ApplicationProcess applicationProcess;
 
 	
-	@GetMapping("/userLogIn")
+	@GetMapping("/")
 	public String logIn(HttpServletRequest httpServletRequest)throws Exception{
 		return applicationProcess.loginProcess(httpServletRequest);
 	}
@@ -45,7 +46,7 @@ public class UserController {
 		return applicationProcess.logOut(request, response, status);
 	}
 
-	@PostMapping(value = "/userLogIn")
+	@PostMapping(value = "/")
 	public String verifyLogin(@RequestParam String name, @RequestParam String password, ModelMap model,
 			MultipartFile file, HttpServletRequest httpServletRequest) throws Exception {
 		return applicationProcess.afterLogin(name, password, model, file, httpServletRequest);
