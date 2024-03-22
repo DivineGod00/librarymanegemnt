@@ -18,6 +18,7 @@ import com.library.management.dao.BookIssueReturnRepo;
 import com.library.management.dao.LoginRepo;
 import com.library.management.dao.UserRepo;
 import com.library.management.dto.UserRegisterDto;
+import com.library.management.encryption.EncryptionAndDecryption;
 import com.library.management.interfaces.ApplicationProcess;
 import com.library.management.service.UserService;
 import com.library.management.sql.model.BookIssueReturn;
@@ -49,6 +50,8 @@ public class UserServiceImple implements ApplicationProcess{
 	@Autowired
 	private BookIssueReturnRepo bookIssueReturnRepo;
 	
+	@Autowired
+	private EncryptionAndDecryption encryptAndDecrypt;
 	
 	@Override
 	public String loginProcess(HttpServletRequest httpServletRequest)throws Exception
@@ -61,8 +64,11 @@ public class UserServiceImple implements ApplicationProcess{
 	@Override
 	public String afterLogin(@RequestParam String name, @RequestParam String password, ModelMap model,
 			MultipartFile file, HttpServletRequest httpServletRequest) throws Exception {
-		String page = userService.afterLogin(name, password, model);
-		LoginMaster lm = loginRepo.findByUsernameAndPassword(name, password);
+		logger.info("username : "+name);
+		logger.info("password : "+encryptAndDecrypt.encryptStr(password));
+		logger.info("Decrypt : "+encryptAndDecrypt.decryptStr(encryptAndDecrypt.encryptStr(password)));
+		String page = userService.afterLogin(name, encryptAndDecrypt.encryptStr(password), model);
+		LoginMaster lm = loginRepo.findByUsernameAndPassword(name, encryptAndDecrypt.encryptStr(password));
 
 		UserMaster user = userRepo.findById(lm.getUserId().getId()).orElse(null);
 		httpServletRequest.getSession().setAttribute("LoggedInUserId", user.getId());

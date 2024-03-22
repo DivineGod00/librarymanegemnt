@@ -2,7 +2,6 @@ package com.library.management.service;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.Collections;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -19,6 +18,7 @@ import com.library.management.dao.BookIssueReturnRepo;
 import com.library.management.dao.LoginRepo;
 import com.library.management.dao.UserRepo;
 import com.library.management.dto.UserRegisterDto;
+import com.library.management.encryption.EncryptionAndDecryption;
 import com.library.management.sql.model.BookIssueReturn;
 import com.library.management.sql.model.BooksMaster;
 import com.library.management.sql.model.LoginMaster;
@@ -48,6 +48,8 @@ public class UserService {
 	@Autowired
 	private BookIssueReturnRepo bookIssueReturnRepo;
 
+	@Autowired
+	private EncryptionAndDecryption encryptAndDecrypt;
 	
 	
 	
@@ -196,7 +198,7 @@ public class UserService {
 		
 		LoginMaster addUser = new LoginMaster();
 		addUser.setUsername(bd.getRollno());
-		addUser.setPassword(bd.getPassword());
+		addUser.setPassword(encryptAndDecrypt.encryptStr(bd.getPassword()));
 		UserMaster bc = userRepo.findById(bd.getId()).orElse(null);
 		if (bc != null) {
 
