@@ -22,7 +22,7 @@ public class CommonMethods {
 			if ((null == s) || (s.isEmpty()))
 				return true;
 		}
-		return false;
+		return false; 
 	}
 
 	public boolean isEqualsOrNot(String name, String password) {
@@ -38,18 +38,7 @@ public class CommonMethods {
 	}
 	
 	
-//	public boolean checkingCredentials(String name, String password) throws Exception {
-//		
-//		boolean nm = isEqualsOrNot(name,password);
-//		
-//		if (( && methods.isEmptyOrNull(password)) || methods.isEmptyOrNull(name) || methods.isEmptyOrNull(password)) {
-//			logger.info("Null is name : " + name + " & Password : " + password);
-//			return false;
-//		}
-//		boolean isValidNamePassword = methods.isEqualsOrNot(name, password);
-//		logger.info("Is Valid User :: " + isValidNamePassword);
-//		return isValidNamePassword;
-//	}
+
 	
 	
 }

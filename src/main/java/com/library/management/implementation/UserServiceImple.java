@@ -56,7 +56,7 @@ public class UserServiceImple implements ApplicationProcess{
 	@Override
 	public String loginProcess(HttpServletRequest httpServletRequest)throws Exception
 	{
-		logger.info("-------- Log In ------");
+		logger.info("------- Log In ------");
 		String page = userService.loginPage();
 		return page;
 	}
@@ -64,12 +64,9 @@ public class UserServiceImple implements ApplicationProcess{
 	@Override
 	public String afterLogin(@RequestParam String name, @RequestParam String password, ModelMap model,
 			MultipartFile file, HttpServletRequest httpServletRequest) throws Exception {
-		logger.info("username : "+name);
-		logger.info("password : "+encryptAndDecrypt.encryptStr(password));
-		logger.info("Decrypt : "+encryptAndDecrypt.decryptStr(encryptAndDecrypt.encryptStr(password)));
+		
 		String page = userService.afterLogin(name, encryptAndDecrypt.encryptStr(password), model);
 		LoginMaster lm = loginRepo.findByUsernameAndPassword(name, encryptAndDecrypt.encryptStr(password));
-
 		UserMaster user = userRepo.findById(lm.getUserId().getId()).orElse(null);
 		httpServletRequest.getSession().setAttribute("LoggedInUserId", user.getId());
 
